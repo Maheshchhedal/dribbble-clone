@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans","Roboto Condensed", sans-serif;
+}
+
+:root{
+    --nav-bg: #f8f7f4;
+    --nav-search: #fff;
+}
+
+header{
+    width: 100vw;
+    height: auto;
+    background-color: var(--nav-bg);
+    padding: 1rem 0;
+}
+.container nav{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar ul{
+    display: flex;
+}
+.navbar ul li{
+    list-style: none;
+    margin: 0 10px;
+    
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: #201e20;
+    font-size: 1.2rem;
+    position: relative; /* Required for the after pseudo-element */
+    
+}
+
+.navbar ul li a:hover {
+    color: blue;
+}
+
+.navbar ul li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0.2rem;
+    background-color: blue;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: width 0.3s;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%; /* Expands the underline on hover */
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+   
+}
+.logo a {
+    text-decoration: none;
+}
+.header-search {
+    position: relative; /* Parent container for positioning the icon */
+    display: inline-block;
+}
+
+.header-search input {
+    width: 300px; /* Adjust as needed */
+    padding: 10px 15px 10px 40px; /* Add padding on the left for the icon */
+    font-size: 16px;
+    border: 1px solid #e8a5e1; /* Border styling */
+    border-radius: 15px; /* Rounded corners */
+}
+
+.header-search i {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Position the icon on the left */
+    transform: translateY(-50%); /* Vertically center the icon */
+    font-size: 16px; /* Adjust icon size */
+    color: #dda1e6; /* Icon color */
+}
+.header-login{
+    display: flex;
+    align-items: center;
+}
+.header-login a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    font-weight: 700;
+}
+
+.header-login a button{
+    margin-top: -0.2rem;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+    background-color: black;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1.2rem;
+}
+/* end nav section  */
+/* hero section  */
+.hero{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;   
+}
+.para1{
+    margin-top: 5rem;
+    border: 2rem;
+    background-color: rgb(236, 161, 23);
+   display: inline-block;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 1.2rem;
+}
+h1{
+    font-size: 5rem;
+    margin-top: 1.5rem;
+    font-weight: 400;
+}
+#text{
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    font-weight: 700;
+}
+button{
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    padding: 0.8rem 1.2rem;
+    background-color: black;
+    color: white;
+    border-radius: 1.5rem;
+}
+
+.image{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem ;
+    overflow-x: hidden;
+}
+.image img{
+    width: 21rem;
+    height: 21rem;
+    object-fit: cover;
+    margin: 1rem;
+    border-radius: 2rem;
+    position: relative;
+    animation: scroll 15s linear infinite;
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0%); 
+    }
+    100% {
+        transform: translateX(-100%); 
+    }
+}
+
+.image img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.image p{
+    position: absolute;
+    top: 50rem;
+    left: 10px; 
+    transform: translateY(-50%); 
+    font-size: 16px; 
+    color: #dda1e6; 
+    
+}
+.home-feed{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    margin-top: 15rem;
+    background-color: rgb(255, 255, 255);
+}
+.home-feed-heading{
+    font-size: 3rem;
+    font-weight: 600;
+}
+.home-feed-image {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2rem; 
+    margin-top: 6rem;
+  }
+
+  /* Image container for each image and its icons */
+  .image-container {
+    position: relative;
+    overflow: hidden; 
+    border-radius: 1rem;
+  }
+
+  /* Image styling */
+  .image-container img {
+    width: 100%; 
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* Scale image slightly on hover */
+  .image-container:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Icon container styling */
+  .icons {
+    position: absolute;
+    bottom: -3rem; 
+    left: 80%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    transition: bottom 0.3s ease;
+  }
+  /* Show icons on hover */
+  .image-container:hover .icons {
+    bottom: 1rem;
+  }
+
+  /* Icon styling */
+  .icons i {
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Hover effect for icons */
+  .icons i:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .home-feed-link{
+    margin-top: 5rem;
+  }
+  .home-feed-link a{
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 1rem;
+    font-size: 1rem;
+    color: black;
+    border-radius: 2rem;
+ 
+  }
+.body-feed{
+    display: inline-block;
+    width: 100vw;
+    height: auto;
+    margin-top: 27rem;
+    background-color: yellow;
+}
+.body-feed-heading{
+    font-weight: 600;
+    width: 45rem;
+    margin-left: 26%;
+    h1{
+        font-size: 4rem;
+        text-align: center;
+        margin-top: 9rem;
+
+       
+    }
+}
+.body-feed-paragraph{
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    width: 40rem;
+    margin-left: 28%;
+    text-align: center;
+    
+}
+.body-feed-link{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    gap: 2rem;
+    a{
+        text-decoration: none;
+        
+    }
+    .black{
+        background-color: black;
+        color: white;
+        padding: 0.8rem 1.2rem;
+        border-radius: 1.2rem;
+    }
+    .black:hover{
+        background-color: rgb(73, 72, 72);
+    }
+   .white{
+    border: 1px solid white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1.2rem;
+    color: black;
+    background-color: white;
+   }
+   .white:hover{
+    color: rgb(105, 104, 104);
+   }
+
+}
+.para{
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-bottom: 3rem;
+    
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem;
+    width: 100vw;
+    height: auto;
+    background-color: white;
+    color: black;
+}
+.footer-l a{
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 5rem;
+}
+.footer-m ul{
+    display: flex;
+    gap: 2rem;
+
+}
+.footer-m ul li{
+   list-style: none;
+}
+.footer-m ul li a{
+    text-decoration: none;
+    color: black;
+}
+.s-media {
+    display: flex;
+    gap: 2rem;
+    margin-right: 2rem;
+}
+.footer-b{
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+padding: 2rem;
+}
+.mid{
+    display: flex;
+    margin-left: 2rem;
+    gap: 2rem;
+    a{
+        text-decoration: none;
+    }
+}
+.right{
+    display: flex;
+    gap: 2rem;
+    a{
+        text-decoration: none;
+    }
+}
